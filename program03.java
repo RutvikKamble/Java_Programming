@@ -13,7 +13,7 @@ class logic
             }
         }
         if(iSum == iNo)
-        {
+        {   
             System.out.println("Yes, The number is Perfect number");
         }
         else
