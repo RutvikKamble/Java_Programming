@@ -1,28 +1,32 @@
-// Write a program to find the sum of all even numbers up to N
+// Write java program to accept file name from user and open that file
 
-class logic 
-{
-    void SumEvenNo(int iNo)
-    {
-        int iCnt = 0, iSum = 0;
-        for(iCnt = 1; iCnt <= iNo; iCnt++)
-        {
-            if(iCnt % 2 == 0)
-            {
-                iSum = iSum + iCnt;
-            }
-        }
-        System.out.println(iSum);
-    }
-}
+import java.io.*;
+import java.util.Scanner;
 
 class program01
 {
-    public static void main(String[] args)
+    public static void main(String A[]) throws Exception
     {
+        String FileName = null;
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the name of file");
+        FileName = sobj.nextLine();
+
+
+        File fobj = new File(FileName);
         
-        logic obj = new logic();
-        obj.SumEvenNo(10);
-        
+        boolean bRet = fobj.createNewFile();
+
+        if(bRet == true)
+        {
+            System.out.println("File gets created successfully");
+        }
+        else
+        {
+            System.out.println("Unable to create file");
+        }
+
+        sobj.close();
     }
 }
